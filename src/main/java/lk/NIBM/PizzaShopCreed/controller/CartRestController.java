@@ -28,7 +28,7 @@ public class CartRestController {
         return cartService.saveAll(cartItems);
     }
 
-    @RequestMapping(value = "/basket/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/cart/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     public boolean deleteBasket(@PathVariable Long id) {
         return cartService.delete(id);

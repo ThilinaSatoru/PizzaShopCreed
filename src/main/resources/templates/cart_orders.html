@@ -19,13 +19,13 @@
 <body style=" background-image: url(img/cart.png)">
 
 <div style="margin-top: 100px;margin-bottom:400px;">
-    <h1 style="text-align:center">Product Management</h1>
+    <h1 style="text-align:center">Cart Orders</h1>
     <div style="text-align:center">
         <h3>
-            <a class="btn btn-success" th:href="@{'/new_pizza'}">Add New Pizza</a>
-            <a class="btn btn-success" th:href="@{'/cart_orders'}">Orders</a>
+            <a class="btn btn-success" style="text-align:center" th:href="@{'/pizzas'}">Pizzas</a>
         </h3>
     </div>
+
     <tr>
         <div align="center" class="col-sm-5">
             <div align="center" class="panel-body">
@@ -33,23 +33,18 @@
                     <thead class="thead-dark">
                     <tr style="background-color:#0d6efd;">
                         <th style="padding:0 30px 0 30px;">ID</th>
-                        <th style="padding:0 30px 0 30px;"> Name</th>
-                        <th style="padding:0 30px 0 30px;">Size</th>
-                        <th style="padding:0 30px 0 30px;">Price</th>
+                        <th style="padding:0 30px 0 30px;"> Amount</th>
+                        <th style="padding:0 30px 0 30px;">Status</th>
                         <th colspan="2"></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="product : ${listProduct }">
-                        <td th:text="${product.id}"> ID</td>
-                        <td th:text="${product.Name}"> Name</td>
-                        <td th:text="${product.Size}">Size</td>
-                        <td th:text="${product.Price}">Price</td>
+                    <tr th:each="cart : ${listCart }">
+                        <td th:text="${cart.id}"> ID</td>
+                        <td th:text="${cart.amount}"> Amount</td>
+                        <td th:text="${cart.status}"> Status</td>
                         <td>
-                            <button class="btn btn-warning"><a th:href="@{'/edits/' + ${product.id}}">Edit</a></button>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger"><a th:href="@{'/deletes/' + ${product.id}}">Delete</a>
+                            <button class="btn btn-danger"><a th:href="@{'/cart/deletes/' + ${cart.id}}">Delete</a>
                             </button>
                         </td>
                     </tr>
