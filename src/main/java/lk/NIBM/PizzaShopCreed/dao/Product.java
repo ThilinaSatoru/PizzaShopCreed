@@ -25,9 +25,9 @@ public class Product {
     private String Name;
 
     @Column(name = "Size")
-    private  String Size;
+    private String Size;
 
     @Column(name = "Price")
-    private  Double Price;
+    private Double Price;
 
 }

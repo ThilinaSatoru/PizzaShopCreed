@@ -20,7 +20,7 @@ class PizzaShopCreedApplicationTests {
 	@Test
 	public void findByUsername() {
 		Optional<User> user = Optional.ofNullable(userservice.findByUsername("admin"));
-		if(user.isPresent()){
+		if (user.isPresent()) {
 			System.out.println(user.get().getPassword());
 		} else {
 			System.out.println("no no no");

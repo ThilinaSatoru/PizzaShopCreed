@@ -11,13 +11,13 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
+    @Column(name = "ID")
     private Long id;
 
     @ManyToOne
     private Cart cart;
 
-    @Column(name="price")
+    @Column(name = "price")
     private Double price;
 
 
